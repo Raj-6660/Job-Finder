@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Mail, Search, Zap, Bell, Target } from "lucide-react";
+import { Briefcase, Mail, Search, Zap, Bell, Target, Twitter, Github } from "lucide-react";
 import { useState } from "react";
 import heroBackground from "@/assets/hero-background.png";
 
@@ -160,7 +160,7 @@ const JobAlertHero = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full h-14 text-lg font-semibold bg-gradient-primary hover:opacity-90 transition-opacity shadow-glow"
+                  className="w-full h-14 text-lg font-semibold bg-purple-800 hover:bg-purple-900 text-white transition-colors"
                 >
                   Subscribe to Job Alerts
                 </Button>
@@ -185,6 +185,40 @@ const JobAlertHero = () => {
             <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
             <div className="text-gray-700 font-semibold">AI-Powered</div>
           </div>
+        </div>
+
+        {/* Reach Out Section */}
+        <div className="text-center mt-16">
+          <Card className="bg-white/90 backdrop-blur-lg border-gray-200 max-w-md mx-auto">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Reach Out</h3>
+              <p className="text-gray-600 text-sm mb-6">Connect with me on social platforms</p>
+              <div className="flex justify-center items-center space-x-6">
+                <a 
+                  href="https://x.com/rajarshya" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-12 h-12 bg-blue-100 hover:bg-blue-200 rounded-full transition-colors group"
+                >
+                  <Twitter className="w-5 h-5 text-blue-600 group-hover:text-blue-700" />
+                </a>
+                <a 
+                  href="https://github.com/Raj-6660" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors group"
+                >
+                  <Github className="w-5 h-5 text-gray-700 group-hover:text-gray-800" />
+                </a>
+                <a 
+                  href="mailto:rajarshyasingh@gmail.com"
+                  className="flex items-center justify-center w-12 h-12 bg-red-100 hover:bg-red-200 rounded-full transition-colors group"
+                >
+                  <Mail className="w-5 h-5 text-red-600 group-hover:text-red-700" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
