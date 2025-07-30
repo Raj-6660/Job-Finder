@@ -25,7 +25,8 @@ const JobAlertHero = () => {
   const popularKeywords = [
     "Software Engineer", "Frontend Developer", "Backend Developer", 
     "Full Stack Developer", "Data Scientist", "Product Manager", 
-    "UX Designer", "DevOps Engineer", "React Developer", "Python Developer"
+    "UX Designer", "DevOps Engineer", "React Developer", "Python Developer",
+    "Data Analyst", "Software Development Engineer", "AI Engineer"
   ];
 
   return (
@@ -37,7 +38,7 @@ const JobAlertHero = () => {
           alt="Developer background" 
           className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-white/60"></div>
+        <div className="absolute inset-0 bg-white/50"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-16">
