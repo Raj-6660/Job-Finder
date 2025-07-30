@@ -12,14 +12,29 @@ const JobAlertHero = () => {
   const [email, setEmail] = useState("");
   const [keywords, setKeywords] = useState("");
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    // This will be connected to n8n backend later
-    console.log("Subscription data:", { email, keywords });
-    // For now, just show a success message
-    alert("Subscription successful! You'll receive job alerts based on your preferences.");
-    setEmail("");
-    setKeywords("");
+
+    try {
+      const response = await fetch("https://rajarshyasingh.app.n8n.cloud/webhook-test/1ffe06e3-e8da-4b57-b8fb-6ca31d5ff54f", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, keywords }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe.");
+      }
+
+      alert("Subscription successful! You'll receive job alerts based on your preferences.");
+      setEmail("");
+      setKeywords("");
+    } catch (error) {
+      console.error("Subscription failed:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   const popularKeywords = [
