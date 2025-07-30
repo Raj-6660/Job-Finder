@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, Mail, Search, Zap, Bell, Target } from "lucide-react";
 import { useState } from "react";
+import heroBackground from "@/assets/hero-background.png";
 
 const JobAlertHero = () => {
   const [email, setEmail] = useState("");
@@ -28,28 +29,29 @@ const JobAlertHero = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-hero relative overflow-hidden">
-      {/* Background decoration */}
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Background image with overlay */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/3 rounded-full blur-3xl"></div>
+        <img 
+          src={heroBackground} 
+          alt="Developer background" 
+          className="w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-white/60"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
-            <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
-              <Briefcase className="w-8 h-8 text-white" />
+            <div className="p-3 bg-primary/20 rounded-2xl backdrop-blur-sm">
+              <Briefcase className="w-8 h-8 text-primary" />
             </div>
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Never Miss A Job
-            <span className="block bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-              Opportunity
-            </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            Never miss a job opportunity
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             AI-powered job alerts that understand your skills and career goals. 
             Get personalized opportunities delivered directly to your inbox.
           </p>
@@ -57,33 +59,33 @@ const JobAlertHero = () => {
 
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300">
+          <Card className="bg-white/80 backdrop-blur-md border-gray-200 hover:bg-white/90 transition-all duration-300">
             <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">AI-Powered Matching</h3>
-              <p className="text-blue-100 text-sm">Smart algorithms analyze job descriptions and match them to your skills</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">AI-Powered Matching</h3>
+              <p className="text-gray-600 text-sm">Smart algorithms analyze job descriptions and match them to your skills</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300">
+          <Card className="bg-white/80 backdrop-blur-md border-gray-200 hover:bg-white/90 transition-all duration-300">
             <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Bell className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Bell className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Instant Alerts</h3>
-              <p className="text-blue-100 text-sm">Get notified the moment relevant opportunities are posted</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Instant Alerts</h3>
+              <p className="text-gray-600 text-sm">Get notified the moment relevant opportunities are posted</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300">
+          <Card className="bg-white/80 backdrop-blur-md border-gray-200 hover:bg-white/90 transition-all duration-300">
             <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Target className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Target className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Personalized</h3>
-              <p className="text-blue-100 text-sm">Tailored job recommendations based on your specific preferences</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Personalized</h3>
+              <p className="text-gray-600 text-sm">Tailored job recommendations based on your specific preferences</p>
             </CardContent>
           </Card>
         </div>
@@ -174,13 +176,13 @@ const JobAlertHero = () => {
 
         {/* Trust indicators */}
         <div className="text-center mt-16">
-          <p className="text-blue-100 text-sm mb-4">Trusted by professionals worldwide</p>
-          <div className="flex justify-center items-center space-x-8 opacity-60">
-            <div className="text-white font-semibold">LinkedIn Integration</div>
-            <div className="w-1 h-1 bg-white rounded-full"></div>
-            <div className="text-white font-semibold">Indeed Integration</div>
-            <div className="w-1 h-1 bg-white rounded-full"></div>
-            <div className="text-white font-semibold">AI-Powered</div>
+          <p className="text-gray-600 text-sm mb-4">Trusted by professionals worldwide</p>
+          <div className="flex justify-center items-center space-x-8 opacity-70">
+            <div className="text-gray-700 font-semibold">LinkedIn Integration</div>
+            <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
+            <div className="text-gray-700 font-semibold">Indeed Integration</div>
+            <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
+            <div className="text-gray-700 font-semibold">AI-Powered</div>
           </div>
         </div>
       </div>
