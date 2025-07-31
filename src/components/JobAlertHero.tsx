@@ -4,13 +4,14 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Mail, Search, Zap, Bell, Target, Twitter, Github } from "lucide-react";
+import { Briefcase, Mail, Search, Zap, Bell, Target, Twitter, Github, MapPin } from "lucide-react";
 import { useState } from "react";
 import heroBackground from "@/assets/hero-background.png";
 
 const JobAlertHero = () => {
   const [email, setEmail] = useState("");
   const [keywords, setKeywords] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ const JobAlertHero = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, keywords }),
+        body: JSON.stringify({ email, keywords, location }),
       });
 
       if (!response.ok) {
@@ -31,6 +32,7 @@ const JobAlertHero = () => {
       alert("Subscription successful! You'll receive job alerts based on your preferences.");
       setEmail("");
       setKeywords("");
+      setLocation("");
     } catch (error) {
       console.error("Subscription failed:", error);
       alert("Something went wrong. Please try again.");
@@ -45,29 +47,29 @@ const JobAlertHero = () => {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img 
           src={heroBackground} 
           alt="Developer background" 
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-white/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-indigo-900/80"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
-            <div className="p-3 bg-primary/20 rounded-2xl backdrop-blur-sm">
-              <Briefcase className="w-8 h-8 text-primary" />
+            <div className="p-3 bg-blue-500/20 rounded-2xl backdrop-blur-sm">
+              <Briefcase className="w-8 h-8 text-blue-400" />
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Never miss a job opportunity
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             AI-powered job alerts that understand your skills and career goals. 
             Get personalized opportunities delivered directly to your inbox.
           </p>
@@ -75,49 +77,49 @@ const JobAlertHero = () => {
 
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <Card className="bg-white/80 backdrop-blur-md border-gray-200 hover:bg-white/90 transition-all duration-300">
+          <Card className="bg-gray-800/40 backdrop-blur-md border-gray-700 hover:bg-gray-800/60 transition-all duration-300">
             <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-6 h-6 text-blue-400" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">AI-Powered Matching</h3>
-              <p className="text-gray-600 text-sm">Smart algorithms analyze job descriptions and match them to your skills</p>
+              <h3 className="text-lg font-semibold text-white mb-2">AI-Powered Matching</h3>
+              <p className="text-gray-300 text-sm">Smart algorithms analyze job descriptions and match them to your skills</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-white/80 backdrop-blur-md border-gray-200 hover:bg-white/90 transition-all duration-300">
+          <Card className="bg-gray-800/40 backdrop-blur-md border-gray-700 hover:bg-gray-800/60 transition-all duration-300">
             <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Bell className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Bell className="w-6 h-6 text-blue-400" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Instant Alerts</h3>
-              <p className="text-gray-600 text-sm">Get notified the moment relevant opportunities are posted</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Instant Alerts</h3>
+              <p className="text-gray-300 text-sm">Get notified the moment relevant opportunities are posted</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-white/80 backdrop-blur-md border-gray-200 hover:bg-white/90 transition-all duration-300">
+          <Card className="bg-gray-800/40 backdrop-blur-md border-gray-700 hover:bg-gray-800/60 transition-all duration-300">
             <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Target className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Target className="w-6 h-6 text-blue-400" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Personalized</h3>
-              <p className="text-gray-600 text-sm">Tailored job recommendations based on your specific preferences</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Personalized</h3>
+              <p className="text-gray-300 text-sm">Tailored job recommendations based on your specific preferences</p>
             </CardContent>
           </Card>
         </div>
 
         {/* Subscription Form */}
         <div className="max-w-2xl mx-auto">
-          <Card className="bg-white/95 backdrop-blur-lg border-0 shadow-elegant">
+          <Card className="bg-gray-800/60 backdrop-blur-lg border-gray-700 shadow-2xl">
             <CardContent className="p-8">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-3">Start Getting Job Alerts</h2>
-                <p className="text-gray-600">Subscribe now and never miss your dream job opportunity</p>
+                <h2 className="text-3xl font-bold text-white mb-3">Start Getting Job Alerts</h2>
+                <p className="text-gray-300">Subscribe now and never miss your dream job opportunity</p>
               </div>
 
               <form onSubmit={handleSubscribe} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-gray-700 font-medium flex items-center gap-2">
+                  <Label htmlFor="email" className="text-gray-200 font-medium flex items-center gap-2">
                     <Mail className="w-4 h-4" />
                     Email Address
                   </Label>
@@ -128,14 +130,14 @@ const JobAlertHero = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="h-12 text-lg border-gray-200 focus:border-primary focus:ring-primary/20"
+                    className="h-12 text-lg bg-gray-900/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-blue-400/20"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="keywords" className="text-gray-700 font-medium flex items-center gap-2">
+                  <Label htmlFor="keywords" className="text-gray-200 font-medium flex items-center gap-2">
                     <Search className="w-4 h-4" />
-                    Job Keywords & Skills
+                    Job Keywords
                   </Label>
                   <Textarea
                     id="keywords"
@@ -143,22 +145,38 @@ const JobAlertHero = () => {
                     value={keywords}
                     onChange={(e) => setKeywords(e.target.value)}
                     required
-                    className="h-24 text-lg border-gray-200 focus:border-primary focus:ring-primary/20 resize-none"
+                    className="h-24 text-lg bg-gray-900/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-blue-400/20 resize-none"
                   />
-                  <p className="text-sm text-gray-500">
-                    Add job titles, skills, technologies, or any keywords that describe your ideal job
+                  <p className="text-sm text-gray-400">
+                    Add job titles, technologies, or any keywords that describe your ideal job
                   </p>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="location" className="text-gray-200 font-medium flex items-center gap-2">
+                    <MapPin className="w-4 h-4" />
+                    Location
+                  </Label>
+                  <Input
+                    id="location"
+                    type="text"
+                    placeholder="e.g., Remote, New York, San Francisco, Global..."
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    required
+                    className="h-12 text-lg bg-gray-900/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-blue-400/20"
+                  />
                 </div>
 
                 {/* Popular keywords suggestions */}
                 <div className="space-y-3">
-                  <Label className="text-gray-700 font-medium">Popular Keywords:</Label>
+                  <Label className="text-gray-200 font-medium">Popular Keywords:</Label>
                   <div className="flex flex-wrap gap-2">
                     {popularKeywords.map((keyword) => (
                       <Badge
                         key={keyword}
                         variant="secondary"
-                        className="cursor-pointer hover:bg-primary hover:text-white transition-colors"
+                        className="cursor-pointer bg-gray-700 text-gray-200 hover:bg-blue-600 hover:text-white transition-colors border-gray-600"
                         onClick={() => {
                           const currentKeywords = keywords.split(',').map(k => k.trim()).filter(k => k);
                           if (!currentKeywords.includes(keyword)) {
@@ -175,14 +193,14 @@ const JobAlertHero = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full h-14 text-lg font-semibold bg-purple-800 hover:bg-purple-900 text-white transition-colors"
+                  className="w-full h-14 text-lg font-semibold bg-purple-600 hover:bg-purple-700 text-white transition-colors"
                 >
                   Subscribe to Job Alerts
                 </Button>
               </form>
 
               <div className="mt-6 text-center">
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-400">
                   Free forever • No spam • Unsubscribe anytime
                 </p>
               </div>
@@ -192,44 +210,44 @@ const JobAlertHero = () => {
 
         {/* Trust indicators */}
         <div className="text-center mt-16">
-          <p className="text-gray-600 text-sm mb-4">Trusted by professionals worldwide</p>
+          <p className="text-gray-300 text-sm mb-4">Trusted by professionals worldwide</p>
           <div className="flex justify-center items-center space-x-8 opacity-70">
-            <div className="text-gray-700 font-semibold">LinkedIn Integration</div>
-            <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
-            <div className="text-gray-700 font-semibold">Indeed Integration</div>
-            <div className="w-1 h-1 bg-gray-500 rounded-full"></div>
-            <div className="text-gray-700 font-semibold">AI-Powered</div>
+            <div className="text-gray-300 font-semibold">LinkedIn Integration</div>
+            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+            <div className="text-gray-300 font-semibold">Indeed Integration</div>
+            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+            <div className="text-gray-300 font-semibold">AI-Powered</div>
           </div>
         </div>
 
         {/* Reach Out Section */}
         <div className="text-center mt-16">
-          <Card className="bg-white/90 backdrop-blur-lg border-gray-200 max-w-md mx-auto">
+          <Card className="bg-gray-800/50 backdrop-blur-lg border-gray-700 max-w-md mx-auto">
             <CardContent className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Reach Out</h3>
-              <p className="text-gray-600 text-sm mb-6">Connect with me on social platforms</p>
+              <h3 className="text-xl font-semibold text-white mb-4">Reach Out</h3>
+              <p className="text-gray-300 text-sm mb-6">Connect with me on social platforms</p>
               <div className="flex justify-center items-center space-x-6">
                 <a 
                   href="https://x.com/rajarshya" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-12 h-12 bg-blue-100 hover:bg-blue-200 rounded-full transition-colors group"
+                  className="flex items-center justify-center w-12 h-12 bg-blue-500/20 hover:bg-blue-500/30 rounded-full transition-colors group"
                 >
-                  <Twitter className="w-5 h-5 text-blue-600 group-hover:text-blue-700" />
+                  <Twitter className="w-5 h-5 text-blue-400 group-hover:text-blue-300" />
                 </a>
                 <a 
                   href="https://github.com/Raj-6660" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors group"
+                  className="flex items-center justify-center w-12 h-12 bg-gray-600/20 hover:bg-gray-600/30 rounded-full transition-colors group"
                 >
-                  <Github className="w-5 h-5 text-gray-700 group-hover:text-gray-800" />
+                  <Github className="w-5 h-5 text-gray-300 group-hover:text-gray-200" />
                 </a>
                 <a 
                   href="mailto:rajarshyasingh@gmail.com"
-                  className="flex items-center justify-center w-12 h-12 bg-red-100 hover:bg-red-200 rounded-full transition-colors group"
+                  className="flex items-center justify-center w-12 h-12 bg-red-500/20 hover:bg-red-500/30 rounded-full transition-colors group"
                 >
-                  <Mail className="w-5 h-5 text-red-600 group-hover:text-red-700" />
+                  <Mail className="w-5 h-5 text-red-400 group-hover:text-red-300" />
                 </a>
               </div>
             </CardContent>
