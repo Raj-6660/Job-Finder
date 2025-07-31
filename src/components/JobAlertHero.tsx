@@ -47,15 +47,15 @@ const JobAlertHero = () => {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-slate-900">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img 
           src={heroBackground} 
           alt="Developer background" 
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-purple-800/80 to-indigo-900/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-gray-800/70 to-slate-900/60"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-16">
