@@ -47,7 +47,7 @@ const JobAlertHero = () => {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-slate-900">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img 
@@ -55,7 +55,7 @@ const JobAlertHero = () => {
           alt="Developer background" 
           className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-gray-800/70 to-slate-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/50 via-purple-900/60 to-pink-900/50"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-16">
@@ -77,7 +77,7 @@ const JobAlertHero = () => {
 
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <Card className="bg-gray-800/40 backdrop-blur-md border-gray-700 hover:bg-gray-800/60 transition-all duration-300">
+          <Card className="bg-gray-900/70 backdrop-blur-md border-gray-700 hover:bg-gray-900/80 transition-all duration-300">
             <CardContent className="p-6 text-center">
               <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Zap className="w-6 h-6 text-blue-400" />
@@ -87,7 +87,7 @@ const JobAlertHero = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-800/40 backdrop-blur-md border-gray-700 hover:bg-gray-800/60 transition-all duration-300">
+          <Card className="bg-gray-900/70 backdrop-blur-md border-gray-700 hover:bg-gray-900/80 transition-all duration-300">
             <CardContent className="p-6 text-center">
               <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Bell className="w-6 h-6 text-blue-400" />
@@ -97,7 +97,7 @@ const JobAlertHero = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-800/40 backdrop-blur-md border-gray-700 hover:bg-gray-800/60 transition-all duration-300">
+          <Card className="bg-gray-900/70 backdrop-blur-md border-gray-700 hover:bg-gray-900/80 transition-all duration-300">
             <CardContent className="p-6 text-center">
               <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Target className="w-6 h-6 text-blue-400" />
@@ -110,7 +110,7 @@ const JobAlertHero = () => {
 
         {/* Subscription Form */}
         <div className="max-w-2xl mx-auto">
-          <Card className="bg-gray-800/60 backdrop-blur-lg border-gray-700 shadow-2xl">
+          <Card className="bg-gray-900/80 backdrop-blur-lg border-gray-700 shadow-2xl">
             <CardContent className="p-8">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-white mb-3">Start Getting Job Alerts</h2>
@@ -222,7 +222,7 @@ const JobAlertHero = () => {
 
         {/* Reach Out Section */}
         <div className="text-center mt-16">
-          <Card className="bg-gray-800/50 backdrop-blur-lg border-gray-700 max-w-md mx-auto">
+          <Card className="bg-gray-900/70 backdrop-blur-lg border-gray-700 max-w-md mx-auto">
             <CardContent className="p-6">
               <h3 className="text-xl font-semibold text-white mb-4">Reach Out</h3>
               <p className="text-gray-300 text-sm mb-6">Connect with me on social platforms</p>
