@@ -212,9 +212,7 @@ const JobAlertHero = () => {
         <div className="text-center mt-16">
           <p className="text-gray-300 text-sm mb-4">Trusted by professionals worldwide</p>
           <div className="flex justify-center items-center space-x-8 opacity-70">
-            <div className="text-gray-300 font-semibold">LinkedIn Integration</div>
-            <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
-            <div className="text-gray-300 font-semibold">Indeed Integration</div>
+            <div className="text-gray-300 font-semibold">Naukri Integration</div>
             <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
             <div className="text-gray-300 font-semibold">AI-Powered</div>
           </div>
