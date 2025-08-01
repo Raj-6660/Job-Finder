@@ -201,7 +201,7 @@ const JobAlertHero = () => {
 
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-400">
-                  Free forever • No spam • Unsubscribe anytime
+                  Free forever • No spam • <a href="/unsubscribe" className="text-blue-400 hover:text-blue-300 underline">Unsubscribe anytime</a>
                 </p>
               </div>
             </CardContent>
