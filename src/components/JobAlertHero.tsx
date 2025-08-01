@@ -17,7 +17,7 @@ const JobAlertHero = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://rajarshyasingh.app.n8n.cloud/webhook/1ffe06e3-e8da-4b57-b8fb-6ca31d5ff54f", {
+      const response = await fetch(import.meta.env.VITE_SUBSCRIBE_WEBHOOK_URL || "https://rajarshyasingh.app.n8n.cloud/webhook/1ffe06e3-e8da-4b57-b8fb-6ca31d5ff54f", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
