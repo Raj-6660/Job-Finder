@@ -14,7 +14,7 @@ const Unsubscribe = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://rajarshyasingh.app.n8n.cloud/webhook-test/6f227a9f-c242-4b0d-b4ef-e2f12d42e040", {
+      const response = await fetch("https://rajarshyasingh.app.n8n.cloud/webhook/6f227a9f-c242-4b0d-b4ef-e2f12d42e040", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
