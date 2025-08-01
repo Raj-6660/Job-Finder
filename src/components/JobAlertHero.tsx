@@ -55,7 +55,7 @@ const JobAlertHero = () => {
           alt="Developer background" 
           className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-800/60 via-pink-700/70 to-indigo-800/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 via-gray-800/70 to-indigo-900/60"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-16">
