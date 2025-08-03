@@ -1,1 +1,993 @@
-
+{
+  "name": "Job Alert Backend",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "1ffe06e3-e8da-4b57-b8fb-6ca31d5ff54f",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1472,
+        -224
+      ],
+      "id": "941f79c0-57e0-4128-8d64-40f9e04c8407",
+      "name": "Webhook",
+      "webhookId": "1ffe06e3-e8da-4b57-b8fb-6ca31d5ff54f"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8",
+          "mode": "list",
+          "cachedResultName": "Job Alert Users",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1323743896,
+          "mode": "list",
+          "cachedResultName": "Sheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8/edit#gid=1323743896"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        768,
+        192
+      ],
+      "id": "8139fa8b-4c1e-40cc-ad99-8f9fb081efe9",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "eflJJ0ISl7Yt82I7",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8",
+          "mode": "list",
+          "cachedResultName": "Job Alert Users",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1323743896,
+          "mode": "list",
+          "cachedResultName": "Sheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8/edit#gid=1323743896"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $json.body.email }}",
+            "Keywords": "={{ $json.body.keywords }}",
+            "Location": "={{ $json.body.location }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Keywords",
+              "displayName": "Keywords",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Location",
+              "displayName": "Location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1728,
+        -224
+      ],
+      "id": "2c66c44a-224b-4f63-806e-768ab11f4716",
+      "name": "Append row in sheet",
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "eflJJ0ISl7Yt82I7",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Subscribe Workflow\n#### It will take the data from the frontend as soon as user hit the subscribe button and then it will update the data in the google sheets.",
+        "height": 320,
+        "width": 496
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1424,
+        -384
+      ],
+      "id": "12c1b804-19bf-4d76-952b-5af426defd92",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "value": "https://console.apify.com/actors/GLb4E7UrStD7XLJxO/input",
+          "mode": "url"
+        },
+        "customBody": "{\n  \"query\": \"\",\n  \"location\": \"\",\n  \"maxItems\": 10,\n  \"desired_results\": 20\n}",
+        "timeout": 60,
+        "authentication": "apifyOAuth2Api"
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        1008,
+        192
+      ],
+      "id": "2ac587a5-9740-4492-a1cb-944304d4ed8a",
+      "name": "Run an Actor",
+      "credentials": {
+        "apifyOAuth2Api": {
+          "id": "XfVkeK3FqxyRTOSk",
+          "name": "Apify account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.apify.com/v2/datasets/{{$node[\"Edit Fields\"].json[\"defaultDatasetId\"]}}/items?clean=true&format=json&limit=1000\n",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1456,
+        192
+      ],
+      "id": "59164e0a-608a-43fd-9d10-148a919deda2",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "uPpu3XPR0ZGBnj7O",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3eae3aa7-ecb2-438d-9312-83f25139ca9b",
+              "name": "defaultDatasetId",
+              "value": "={{ $json.defaultDatasetId }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1216,
+        192
+      ],
+      "id": "99aed8a1-da96-48f5-a5fe-b329b0cfb3ea",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an AI agent that summarizes job listings per user.\n\nFor the following job listings, generate a concise summary using this structure for each:\n\n- **Job Title**: ...\n- **Company**: ...\n- **Location**: ...\n- **Salary**: ...\n- **Experience Required**: ...\n- **Skills**: ...\n- **Short Description**: ...\n- **Job URL**: ...\n\n{{ $json.jobFormatted }}\n\nGive Email at the end:\n{{ $json.email }}\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        448,
+        544
+      ],
+      "id": "e563c2c0-d74d-4600-8974-a368e753939a",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        448,
+        816
+      ],
+      "id": "978097b9-579d-4f4d-8aa4-63bbb3187152",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "WoYNBK0V6lmEDkBp",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "Job Listing Summary from Job Finder",
+        "message": "={{ $json.message }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2640,
+        544
+      ],
+      "id": "4800237f-f077-4be2-ba1d-f35c120fa14e",
+      "name": "Send a message",
+      "webhookId": "d763ba91-49bf-42f7-bb5a-deba13dd24cd",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "CUTpzDMwcGIUJkj1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0215c34c-1615-4c3c-9025-c5eab991aecd",
+              "leftValue": "={{ $json['Job Title'] }}",
+              "rightValue": "={{ $('Get row(s) in sheet').item.json.Keywords }}",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "7c532cbb-cad6-4fa9-a73f-a78b1fe6978f",
+              "leftValue": "={{ $json.Location }}",
+              "rightValue": "={{ $('Get row(s) in sheet').item.json.Location }}",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "be97399f-b76d-4737-9e82-6a416164db32",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        1792,
+        192
+      ],
+      "id": "5f2375c5-3dc2-41c0-aef0-8ef1fdf3053a",
+      "name": "Filter Jobs according to user's preferences for keyword and location"
+    },
+    {
+      "parameters": {
+        "jsCode": "const jobs = $input.all(); // All job listings\nconst users = $(\"Get row(s) in sheet\").all(); // All user preferences from sheet\n\nconst jobMatches = new Map(); // Key: jobId, Value: job + matched emails + matchTypes\n\nfor (const jobItem of jobs) {\n  const job = jobItem.json;\n\n  const jobLocation = (job.Location || \"\").toLowerCase();\n  const jobDescription = (job.Description || \"\").toLowerCase();\n  const jobTags = (job[\"Skills/Tags\"] || \"\").toLowerCase();\n  const jobId = job[\"Job ID\"];\n\n  for (const user of users) {\n    const userEmail = (user.json.Email || \"\").toLowerCase();\n\n    const userLocations = (user.json.Location || \"\").toLowerCase().split(\",\").map(s => s.trim());\n    const userKeywords = (user.json.Keyword || \"\").toLowerCase().split(\",\").map(s => s.trim());\n\n    const locationMatched = userLocations.some(loc => jobLocation.includes(loc));\n    const keywordMatched = userKeywords.some(kw =>\n      jobDescription.includes(kw) || jobTags.includes(kw)\n    );\n\n    // Proceed only if keyword matched\n    if (keywordMatched) {\n      // Check if this job is already stored\n      if (!jobMatches.has(jobId)) {\n        jobMatches.set(jobId, {\n          ...job,\n          matchedEmail: [], // array of emails\n          matchType: {}     // email => matchType\n        });\n      }\n\n      const matchType = locationMatched ? \"Location+Keyword\" : \"Keyword Only\";\n\n      const jobEntry = jobMatches.get(jobId);\n      if (!jobEntry.matchedEmail.includes(userEmail)) {\n        jobEntry.matchedEmail.push(userEmail);\n        jobEntry.matchType[userEmail] = matchType;\n      }\n    }\n  }\n}\n\n// Prepare final output\nconst output = [];\nfor (const job of jobMatches.values()) {\n  output.push({ json: job });\n}\n\nreturn output;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2224,
+        192
+      ],
+      "id": "fb141622-1ad5-4e1a-a312-1b23a2af36c3",
+      "name": "Further Filtering and handling edge cases"
+    },
+    {
+      "parameters": {
+        "jsCode": "const jobs = $input.all();\nconst users = $('Get row(s) in sheet').all();\n\nfunction normalize(str) {\n  return (str || \"\").toLowerCase().trim();\n}\n\nfunction splitWords(text) {\n  return normalize(text).split(/\\W+/).filter(Boolean);\n}\n\n// Basic Levenshtein distance\nfunction levenshtein(a, b) {\n  const an = a.length;\n  const bn = b.length;\n  if (an === 0) return bn;\n  if (bn === 0) return an;\n\n  const matrix = Array.from({ length: an + 1 }, () => Array(bn + 1).fill(0));\n  for (let i = 0; i <= an; i++) matrix[i][0] = i;\n  for (let j = 0; j <= bn; j++) matrix[0][j] = j;\n\n  for (let i = 1; i <= an; i++) {\n    for (let j = 1; j <= bn; j++) {\n      const cost = a[i - 1] === b[j - 1] ? 0 : 1;\n      matrix[i][j] = Math.min(\n        matrix[i - 1][j] + 1,\n        matrix[i][j - 1] + 1,\n        matrix[i - 1][j - 1] + cost\n      );\n    }\n  }\n\n  return matrix[an][bn];\n}\n\nfunction fuzzyMatchWords(source, targets) {\n  const threshold = 2;\n  const sourceWords = splitWords(source);\n  const targetWords = splitWords(targets);\n  return sourceWords.some(sw =>\n    targetWords.some(tw => levenshtein(sw, tw) <= threshold)\n  );\n}\n\nconst results = [];\n\nfor (const user of users) {\n  const email = user.json.Email || \"\";\n  const keywords = user.json.Keywords || \"\";\n  const locationPref = user.json.Location || \"\";\n\n  const matches = [];\n\n  for (const item of jobs) {\n    const job = item.json;\n    const jobTitle = job[\"Job Title\"] || \"\";\n    const jobLocation = job[\"Location\"] || \"\";\n\n    const keywordMatched = fuzzyMatchWords(jobTitle, keywords);\n    const locationMatched = fuzzyMatchWords(jobLocation, locationPref);\n\n    if (keywordMatched || locationMatched) {\n      let matchType = \"Location Only\";\n      if (keywordMatched && locationMatched) matchType = \"Keyword and Location\";\n      else if (keywordMatched) matchType = \"Keyword Only\";\n\n      const jobURL = job[\"Job URL\"] || job.URL || \"URL not available\";\n      const description = (job.Description || \"\").slice(0, 300) || \"No description available.\";\n      const jobFormatted = `- **Job Title**: ${jobTitle}\n- **Company**: ${job.Company || \"\"}\n- **Location**: ${jobLocation}\n- **Salary**: ${job.Salary || \"Not mentioned\"}\n- **Experience Required**: ${job[\"Experience Required\"] || \"Not specified\"}\n- **Skills**: ${job[\"Skills/Tags\"] || \"Not specified\"}\n- **Short Description**: ${description}\n- **Job URL**: [View Job Posting](${jobURL})`;\n\n      matches.push({\n        email,\n        jobFormatted,\n        matchType\n      });\n    }\n  }\n\n  // If no matches, assign one random job\n  if (matches.length === 0 && jobs.length > 0) {\n    const randomJob = jobs[Math.floor(Math.random() * jobs.length)].json;\n    const jobURL = randomJob[\"Job URL\"] || randomJob.URL || \"URL not available\";\n    const description = (randomJob.Description || \"\").slice(0, 300) || \"No description available.\";\n    const jobFormatted = `- **Job Title**: ${randomJob[\"Job Title\"] || \"\"}\n- **Company**: ${randomJob.Company || \"\"}\n- **Location**: ${randomJob.Location || \"\"}\n- **Salary**: ${randomJob.Salary || \"Not mentioned\"}\n- **Experience Required**: ${randomJob[\"Experience Required\"] || \"Not specified\"}\n- **Skills**: ${randomJob[\"Skills/Tags\"] || \"Not specified\"}\n- **Short Description**: ${description}\n- **Job URL**: [View Job Posting](${jobURL})`;\n\n    matches.push({\n      email,\n      jobFormatted,\n      matchType: \"Randomly Assigned (No Match)\"\n    });\n  }\n\n  // Push all matches\n  for (const match of matches) {\n    results.push({ json: match });\n  }\n}\n\nreturn results;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2592,
+        192
+      ],
+      "id": "134df789-f9b8-4de0-ada5-9bd39f9abf38",
+      "name": "Differentiating Formatted jobs and email"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all summaries from previous step\nconst allSummaries = $input.all();\n\nreturn allSummaries.map(item => {\n  const fullOutput = item.json.output;\n\n  // Extract email from the output\n  const emailMatch = fullOutput.match(/[\\w.-]+@[\\w.-]+\\.\\w+/);\n  const email = emailMatch ? emailMatch[0] : \"unknown@example.com\";\n\n  // Remove email from summary if needed\n  const cleanedSummary = fullOutput.replace(email, \"\").trim();\n\n  return {\n    json: {\n      Email: email,\n      Summary: cleanedSummary\n    }\n  };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        944,
+        544
+      ],
+      "id": "a4ef6920-df46-47a9-a132-d808021ef551",
+      "name": "Extract email and summary from the output"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Group job summaries by unique email\nconst grouped = {};\n\nfor (const item of items) {\n  const email = item.json.Email?.trim();\n  const summary = item.json.Summary?.trim();\n\n  if (!email || !summary) continue; // Skip incomplete entries\n\n  if (!grouped[email]) {\n    grouped[email] = [];\n  }\n\n  grouped[email].push(summary);\n}\n\n// Format each group's summaries into a Markdown email\nconst result = [];\n\nfor (const email in grouped) {\n  const summaries = grouped[email];\n\n  const message = `## 📩 Hello ${email},\\n\\nHere are your job summaries for today:\\n\\n---\\n\\n` +\n    summaries.map((s, i) => `### 🧾 Job ${i + 1}\\n${s}`).join(`\\n\\n---\\n\\n`) +\n    `\\n\\n---\\n\\n*This email was generated automatically by your Job Alert System.*`;\n\n  result.push({\n    json: {\n      email,\n      message\n    }\n  });\n}\n\nreturn result;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2000,
+        544
+      ],
+      "id": "13137510-a8dd-4498-9406-a4b591d04d55",
+      "name": "Takes data from the excel and convert it to the prefinal format"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Minimal Markdown to HTML converter\nfunction markdownToHTML(markdown) {\n  return markdown\n    .replace(/^## (.*$)/gim, '<h2>$1</h2>')\n    .replace(/^### (.*$)/gim, '<h3>$1</h3>')\n    .replace(/\\*\\*(.*?)\\*\\*/gim, '<strong>$1</strong>')\n    .replace(/\\*(.*?)\\*/gim, '<em>$1</em>')\n    .replace(/`([^`]+)`/g, '<code>$1</code>')\n    .replace(/\\n-{3,}\\n/g, '<hr>')\n    .replace(/\\n/g, '<br>');\n}\n\n// Group summaries by unique email\nconst grouped = {};\n\nfor (const item of items) {\n  const email = item.json.email?.trim();  // NOTE: use `email` and `message` now\n  const message = item.json.message?.trim();\n\n  if (!email || !message) continue;\n\n  if (!grouped[email]) {\n    grouped[email] = [];\n  }\n\n  grouped[email].push(message);\n}\n\n// Convert each grouped Markdown message to HTML\nconst result = [];\n\nfor (const email in grouped) {\n  const markdownMessages = grouped[email];\n\n  // Combine and convert to HTML\n  const combinedMarkdown = markdownMessages.join('\\n\\n<hr>\\n\\n');\n  const htmlMessage = markdownToHTML(combinedMarkdown);\n\n  result.push({\n    json: {\n      email,\n      message: htmlMessage  // final HTML version\n    }\n  });\n}\n\nreturn result;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2336,
+        544
+      ],
+      "id": "ef5fe02c-4aac-49b8-8612-32e2f0813d25",
+      "name": "Convert the markdown format to the HTML format so as to send it to the gmail account"
+    },
+    {
+      "parameters": {
+        "content": "# Backend Workflow\n",
+        "height": 976,
+        "width": 2528,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        352,
+        -16
+      ],
+      "id": "224d8374-e35d-4303-80b7-47b36f7e22f5",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "6f227a9f-c242-4b0d-b4ef-e2f12d42e040",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1056,
+        1296
+      ],
+      "id": "fbfe2117-d8fd-471b-ad4a-405cbb24b8ab",
+      "name": "Webhook1",
+      "webhookId": "6f227a9f-c242-4b0d-b4ef-e2f12d42e040"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8",
+          "mode": "list",
+          "cachedResultName": "Job Alert Users",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1323743896,
+          "mode": "list",
+          "cachedResultName": "Sheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8/edit#gid=1323743896"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1376,
+        1104
+      ],
+      "id": "b4e41f5a-1162-42ba-9d71-730a387fa02e",
+      "name": "Get row(s) in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "eflJJ0ISl7Yt82I7",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA",
+          "mode": "list",
+          "cachedResultName": "SummarizedJobs",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1376,
+        1376
+      ],
+      "id": "af866bc7-82b3-4959-b277-53508f74b512",
+      "name": "Get row(s) in sheet2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "eflJJ0ISl7Yt82I7",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const emailToDelete = $node[\"Webhook1\"].json.body.email?.trim().toLowerCase();\nconst rows = $input.all();\n\nconst matchedRows = rows.filter(row => {\n  const rowEmail = (row.json.Email || \"\").trim().toLowerCase();\n  return rowEmail === emailToDelete;\n});\n\n// Sort row numbers in descending order to avoid shifting issues\nmatchedRows.sort((a, b) => b.json.row_number - a.json.row_number);\n\nreturn matchedRows.map(row => ({\n  json: {\n    row_number: row.json.row_number\n  }\n}));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1616,
+        1104
+      ],
+      "id": "08aa4189-0e0c-4203-b3f7-9f42017e87f8",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "jsCode": "const emailToDelete = $node[\"Webhook1\"].json.body.email?.trim().toLowerCase();\nconst rows = $input.all();\n\nconst matchedRows = rows.filter(row => {\n  const rowEmail = (row.json.Email || \"\").trim().toLowerCase();\n  return rowEmail === emailToDelete;\n});\n\n// Sort row numbers in descending order to avoid shifting issues\nmatchedRows.sort((a, b) => b.json.row_number - a.json.row_number);\n\nreturn matchedRows.map(row => ({\n  json: {\n    row_number: row.json.row_number\n  }\n}));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1648,
+        1376
+      ],
+      "id": "f9b56351-7436-4c55-b6ea-9ff54eac12bf",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "documentId": {
+          "__rl": true,
+          "value": "1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8",
+          "mode": "list",
+          "cachedResultName": "Job Alert Users",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1323743896,
+          "mode": "list",
+          "cachedResultName": "Sheet",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uK9XRngx7S1Cg1o6alw4Oyj5doUduUcYQZspKrkDGf8/edit#gid=1323743896"
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1840,
+        1104
+      ],
+      "id": "7a51685b-e749-4fec-97c5-ec983b16edbf",
+      "name": "Delete rows or columns from sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "eflJJ0ISl7Yt82I7",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "documentId": {
+          "__rl": true,
+          "value": "19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA",
+          "mode": "list",
+          "cachedResultName": "SummarizedJobs",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit#gid=0"
+        },
+        "startIndex": "={{ $json.row_number }}",
+        "numberToDelete": "={{ 1 }}"
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1920,
+        1376
+      ],
+      "id": "17f89816-6c8b-4ba0-8790-138c274e2025",
+      "name": "Delete rows or columns from sheet1",
+      "executeOnce": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "eflJJ0ISl7Yt82I7",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Webhook1').item.json.body.email }}",
+        "subject": "Unsubscribed from Job Finder",
+        "message": "=<html>\n  <body>\n    <h2>You’ve been unsubscribed</h2>\n    <p>Hello,</p>\n    <p>\n      We’ve successfully removed your email address from our job alert subscription list. \n      You will no longer receive job updates from us.\n    </p>\n    <p>\n      If this was a mistake or you change your mind in the future, \n      you're always welcome to re-subscribe.\n    </p>\n    <p>Thank you,<br>\n    <strong>The Job Finder Team</strong></p>\n    <hr>\n    <p style=\"font-size:12px;color:#888;\">\n      This is an automated message. Please do not reply to this email.\n    </p>\n  </body>\n</html>\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2144,
+        1184
+      ],
+      "id": "c1d904b4-b2fa-460b-932d-85543867cbce",
+      "name": "Send a message1",
+      "webhookId": "ad8820e3-cdfd-4d33-bf53-08c080dca776",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "CUTpzDMwcGIUJkj1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Unsubscribe Workflow\n",
+        "height": 592,
+        "width": 1440,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        976,
+        1008
+      ],
+      "id": "950bc8cc-e5fa-4a66-aad7-01ea74f6aaef",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "operation": "clear",
+        "documentId": {
+          "__rl": true,
+          "value": "19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA",
+          "mode": "list",
+          "cachedResultName": "SummarizedJobs",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit#gid=0"
+        },
+        "keepFirstRow": true
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1280,
+        544
+      ],
+      "id": "f3729dd5-4a28-4f29-a2df-d9fb9c9d9b29",
+      "name": "Clear sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "eflJJ0ISl7Yt82I7",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA",
+          "mode": "list",
+          "cachedResultName": "SummarizedJobs",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $json.Email }}",
+            "Summary": "={{ $json.Summary }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Summary",
+              "displayName": "Summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1632,
+        544
+      ],
+      "id": "da4fa66b-cde8-4524-8e0b-c0015c1f388b",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "eflJJ0ISl7Yt82I7",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Run an Actor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run an Actor": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Filter Jobs according to user's preferences for keyword and location",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Extract email and summary from the output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Jobs according to user's preferences for keyword and location": {
+      "main": [
+        [
+          {
+            "node": "Further Filtering and handling edge cases",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Further Filtering and handling edge cases": {
+      "main": [
+        [
+          {
+            "node": "Differentiating Formatted jobs and email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Differentiating Formatted jobs and email": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract email and summary from the output": {
+      "main": [
+        [
+          {
+            "node": "Clear sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Takes data from the excel and convert it to the prefinal format": {
+      "main": [
+        [
+          {
+            "node": "Convert the markdown format to the HTML format so as to send it to the gmail account",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert the markdown format to the HTML format so as to send it to the gmail account": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet2": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Delete rows or columns from sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Delete rows or columns from sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete rows or columns from sheet": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete rows or columns from sheet1": {
+      "main": [
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clear sheet": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Takes data from the excel and convert it to the prefinal format",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "99b3c857-ade6-459b-a853-ae3f51f22fa6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "c4aaadd46948acf2a3bb6e30f694896866dedddb7399ea7a66a2a27a365a65bb"
+  },
+  "id": "95z3f5e7budtJq14",
+  "tags": []
+}
