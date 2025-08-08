@@ -10,10 +10,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        1472,
-        -224
+        48,
+        160
       ],
-      "id": "941f79c0-57e0-4128-8d64-40f9e04c8407",
+      "id": "cdc60e77-dc34-424c-9b62-9a2c4f135658",
       "name": "Webhook",
       "webhookId": "1ffe06e3-e8da-4b57-b8fb-6ca31d5ff54f"
     },
@@ -38,14 +38,14 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        768,
-        192
+        -656,
+        576
       ],
-      "id": "8139fa8b-4c1e-40cc-ad99-8f9fb081efe9",
+      "id": "1fc4613b-fe2f-4fe8-b9cc-37c32709301b",
       "name": "Get row(s) in sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "eflJJ0ISl7Yt82I7",
+          "id": "u5uj9yPYrY6Ec3Nv",
           "name": "Google Sheets account"
         }
       }
@@ -115,15 +115,15 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        1728,
-        -224
+        304,
+        160
       ],
-      "id": "2c66c44a-224b-4f63-806e-768ab11f4716",
+      "id": "c80da7dd-fb80-4e0d-bcd0-eaf8851194b4",
       "name": "Append row in sheet",
       "executeOnce": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "eflJJ0ISl7Yt82I7",
+          "id": "u5uj9yPYrY6Ec3Nv",
           "name": "Google Sheets account"
         }
       }
@@ -137,10 +137,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1424,
-        -384
+        0,
+        0
       ],
-      "id": "12c1b804-19bf-4d76-952b-5af426defd92",
+      "id": "610c2867-83c5-454f-af0f-632c6d1aeefa",
       "name": "Sticky Note"
     },
     {
@@ -152,21 +152,20 @@
           "mode": "url"
         },
         "customBody": "{\n  \"query\": \"\",\n  \"location\": \"\",\n  \"maxItems\": 10,\n  \"desired_results\": 20\n}",
-        "timeout": 60,
-        "authentication": "apifyOAuth2Api"
+        "timeout": 120
       },
       "type": "@apify/n8n-nodes-apify.apify",
       "typeVersion": 1,
       "position": [
-        1008,
-        192
+        -416,
+        576
       ],
-      "id": "2ac587a5-9740-4492-a1cb-944304d4ed8a",
+      "id": "2627a7a8-b63f-46ff-bf3d-04b315301d54",
       "name": "Run an Actor",
       "credentials": {
-        "apifyOAuth2Api": {
-          "id": "XfVkeK3FqxyRTOSk",
-          "name": "Apify account 2"
+        "apifyApi": {
+          "id": "4rIXr6I8zm8ccclL",
+          "name": "Apify account"
         }
       }
     },
@@ -180,14 +179,14 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1456,
-        192
+        64,
+        576
       ],
-      "id": "59164e0a-608a-43fd-9d10-148a919deda2",
+      "id": "f55edb54-a65c-405a-94d0-c278fe0003c5",
       "name": "HTTP Request",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "uPpu3XPR0ZGBnj7O",
+          "id": "nNEzcMCaTCR9XVMe",
           "name": "Header Auth account"
         }
       }
@@ -209,10 +208,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1216,
-        192
+        -176,
+        576
       ],
-      "id": "99aed8a1-da96-48f5-a5fe-b329b0cfb3ea",
+      "id": "5a8e092c-b183-4633-9c85-5fb8753282d5",
       "name": "Edit Fields"
     },
     {
@@ -224,10 +223,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.1,
       "position": [
-        448,
-        544
+        -976,
+        928
       ],
-      "id": "e563c2c0-d74d-4600-8974-a368e753939a",
+      "id": "6d301048-0229-4ff7-80bd-dc85c8b9e36d",
       "name": "AI Agent"
     },
     {
@@ -237,14 +236,14 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        448,
-        816
+        -976,
+        1200
       ],
-      "id": "978097b9-579d-4f4d-8aa4-63bbb3187152",
+      "id": "ba1427e3-be5f-43e1-b3c7-bc97d63154ac",
       "name": "Google Gemini Chat Model",
       "credentials": {
         "googlePalmApi": {
-          "id": "WoYNBK0V6lmEDkBp",
+          "id": "M5Vm2fWuMa9ko9k8",
           "name": "Google Gemini(PaLM) Api account"
         }
       }
@@ -259,15 +258,15 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        2640,
-        544
+        1216,
+        928
       ],
-      "id": "4800237f-f077-4be2-ba1d-f35c120fa14e",
+      "id": "cfb3fc01-a5d3-468e-9f00-9723c9331db0",
       "name": "Send a message",
       "webhookId": "d763ba91-49bf-42f7-bb5a-deba13dd24cd",
       "credentials": {
         "gmailOAuth2": {
-          "id": "CUTpzDMwcGIUJkj1",
+          "id": "iBwp7golgOEMLNdh",
           "name": "Gmail account"
         }
       }
@@ -318,10 +317,10 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        1792,
-        192
+        384,
+        576
       ],
-      "id": "5f2375c5-3dc2-41c0-aef0-8ef1fdf3053a",
+      "id": "348f98d6-0e30-42c5-b221-601a79339a81",
       "name": "Filter Jobs according to user's preferences for keyword and location"
     },
     {
@@ -331,10 +330,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2224,
-        192
+        800,
+        576
       ],
-      "id": "fb141622-1ad5-4e1a-a312-1b23a2af36c3",
+      "id": "02c2eee6-4dd2-488d-85fc-c633cac24213",
       "name": "Further Filtering and handling edge cases"
     },
     {
@@ -344,10 +343,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2592,
-        192
+        1168,
+        576
       ],
-      "id": "134df789-f9b8-4de0-ada5-9bd39f9abf38",
+      "id": "141c4d9c-6a53-499d-b6b3-6e1f5ac973ca",
       "name": "Differentiating Formatted jobs and email"
     },
     {
@@ -357,10 +356,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        944,
-        544
+        -480,
+        928
       ],
-      "id": "a4ef6920-df46-47a9-a132-d808021ef551",
+      "id": "40c9a80f-f7a3-4205-b9d9-40cce5e0661e",
       "name": "Extract email and summary from the output"
     },
     {
@@ -370,10 +369,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2000,
-        544
+        576,
+        928
       ],
-      "id": "13137510-a8dd-4498-9406-a4b591d04d55",
+      "id": "15bf76d3-0308-4763-b0c9-910ef80c6033",
       "name": "Takes data from the excel and convert it to the prefinal format"
     },
     {
@@ -383,10 +382,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2336,
-        544
+        912,
+        928
       ],
-      "id": "ef5fe02c-4aac-49b8-8612-32e2f0813d25",
+      "id": "8dd71a02-f762-4811-a948-74f2bc0d2e61",
       "name": "Convert the markdown format to the HTML format so as to send it to the gmail account"
     },
     {
@@ -399,10 +398,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        352,
-        -16
+        -1072,
+        368
       ],
-      "id": "224d8374-e35d-4303-80b7-47b36f7e22f5",
+      "id": "7b069502-4adc-45ee-a432-f1d728d189c2",
       "name": "Sticky Note1"
     },
     {
@@ -414,10 +413,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        1056,
-        1296
+        -368,
+        1680
       ],
-      "id": "fbfe2117-d8fd-471b-ad4a-405cbb24b8ab",
+      "id": "dad5036e-ece5-4e14-bb40-3d6a7e440f1f",
       "name": "Webhook1",
       "webhookId": "6f227a9f-c242-4b0d-b4ef-e2f12d42e040"
     },
@@ -442,47 +441,14 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        1376,
-        1104
+        -64,
+        1680
       ],
-      "id": "b4e41f5a-1162-42ba-9d71-730a387fa02e",
+      "id": "630b7896-8aa4-4e3e-a942-38919897fe19",
       "name": "Get row(s) in sheet1",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "eflJJ0ISl7Yt82I7",
-          "name": "Google Sheets account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA",
-          "mode": "list",
-          "cachedResultName": "SummarizedJobs",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "gid=0",
-          "mode": "list",
-          "cachedResultName": "Sheet1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit#gid=0"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.6,
-      "position": [
-        1376,
-        1376
-      ],
-      "id": "af866bc7-82b3-4959-b277-53508f74b512",
-      "name": "Get row(s) in sheet2",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "eflJJ0ISl7Yt82I7",
+          "id": "u5uj9yPYrY6Ec3Nv",
           "name": "Google Sheets account"
         }
       }
@@ -494,24 +460,11 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1616,
-        1104
+        208,
+        1680
       ],
-      "id": "08aa4189-0e0c-4203-b3f7-9f42017e87f8",
+      "id": "0e86b05d-dc5d-42b8-9b17-ba06043fa909",
       "name": "Code"
-    },
-    {
-      "parameters": {
-        "jsCode": "const emailToDelete = $node[\"Webhook1\"].json.body.email?.trim().toLowerCase();\nconst rows = $input.all();\n\nconst matchedRows = rows.filter(row => {\n  const rowEmail = (row.json.Email || \"\").trim().toLowerCase();\n  return rowEmail === emailToDelete;\n});\n\n// Sort row numbers in descending order to avoid shifting issues\nmatchedRows.sort((a, b) => b.json.row_number - a.json.row_number);\n\nreturn matchedRows.map(row => ({\n  json: {\n    row_number: row.json.row_number\n  }\n}));\n"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        1648,
-        1376
-      ],
-      "id": "f9b56351-7436-4c55-b6ea-9ff54eac12bf",
-      "name": "Code1"
     },
     {
       "parameters": {
@@ -534,50 +487,14 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        1840,
-        1104
+        464,
+        1680
       ],
-      "id": "7a51685b-e749-4fec-97c5-ec983b16edbf",
+      "id": "ca4e21ee-eb21-47d0-9ff4-26b9a178fbc8",
       "name": "Delete rows or columns from sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "eflJJ0ISl7Yt82I7",
-          "name": "Google Sheets account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "delete",
-        "documentId": {
-          "__rl": true,
-          "value": "19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA",
-          "mode": "list",
-          "cachedResultName": "SummarizedJobs",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "gid=0",
-          "mode": "list",
-          "cachedResultName": "Sheet1",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/19C1CciOU8S07z9m6cIoWa5EuJN2c0dTFvRpIrq8pmvA/edit#gid=0"
-        },
-        "startIndex": "={{ $json.row_number }}",
-        "numberToDelete": "={{ 1 }}"
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.6,
-      "position": [
-        1920,
-        1376
-      ],
-      "id": "17f89816-6c8b-4ba0-8790-138c274e2025",
-      "name": "Delete rows or columns from sheet1",
-      "executeOnce": false,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "eflJJ0ISl7Yt82I7",
+          "id": "u5uj9yPYrY6Ec3Nv",
           "name": "Google Sheets account"
         }
       }
@@ -592,15 +509,15 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        2144,
-        1184
+        752,
+        1680
       ],
-      "id": "c1d904b4-b2fa-460b-932d-85543867cbce",
+      "id": "94c6b1a6-62d3-4793-8894-82cca9a4cc0b",
       "name": "Send a message1",
       "webhookId": "ad8820e3-cdfd-4d33-bf53-08c080dca776",
       "credentials": {
         "gmailOAuth2": {
-          "id": "CUTpzDMwcGIUJkj1",
+          "id": "iBwp7golgOEMLNdh",
           "name": "Gmail account"
         }
       }
@@ -615,10 +532,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        976,
-        1008
+        -448,
+        1392
       ],
-      "id": "950bc8cc-e5fa-4a66-aad7-01ea74f6aaef",
+      "id": "49e5aa03-b8a8-46f1-8d5a-3ad2492503c8",
       "name": "Sticky Note2"
     },
     {
@@ -643,14 +560,14 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        1280,
-        544
+        -144,
+        928
       ],
-      "id": "f3729dd5-4a28-4f29-a2df-d9fb9c9d9b29",
+      "id": "8f26dcd4-917c-4e96-b9ed-acc5094d5528",
       "name": "Clear sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "eflJJ0ISl7Yt82I7",
+          "id": "u5uj9yPYrY6Ec3Nv",
           "name": "Google Sheets account"
         }
       }
@@ -710,14 +627,14 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        1632,
-        544
+        208,
+        928
       ],
-      "id": "da4fa66b-cde8-4524-8e0b-c0015c1f388b",
+      "id": "8bc9394c-fde5-464d-b1c0-aa285b5fa412",
       "name": "Append or update row in sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "eflJJ0ISl7Yt82I7",
+          "id": "u5uj9yPYrY6Ec3Nv",
           "name": "Google Sheets account"
         }
       }
@@ -730,28 +647,6 @@
         [
           {
             "node": "Append row in sheet",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get row(s) in sheet": {
-      "main": [
-        [
-          {
-            "node": "Run an Actor",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Run an Actor": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
             "type": "main",
             "index": 0
           }
@@ -879,17 +774,6 @@
         ]
       ]
     },
-    "Get row(s) in sheet2": {
-      "main": [
-        [
-          {
-            "node": "Code1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Get row(s) in sheet1": {
       "main": [
         [
@@ -912,29 +796,7 @@
         ]
       ]
     },
-    "Code1": {
-      "main": [
-        [
-          {
-            "node": "Delete rows or columns from sheet1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Delete rows or columns from sheet": {
-      "main": [
-        [
-          {
-            "node": "Get row(s) in sheet2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Delete rows or columns from sheet1": {
       "main": [
         [
           {
@@ -977,17 +839,39 @@
           }
         ]
       ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Run an Actor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run an Actor": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": true,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "99b3c857-ade6-459b-a853-ae3f51f22fa6",
+  "versionId": "d95d1194-779f-4cea-9a90-dc18b731caff",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "c4aaadd46948acf2a3bb6e30f694896866dedddb7399ea7a66a2a27a365a65bb"
+    "instanceId": "f8819abfecb819a6f68e17fc1a77e6a770eddb8209221ef57a7460afb8b0f740"
   },
-  "id": "95z3f5e7budtJq14",
+  "id": "TsWugQNjD4YVsWw9",
   "tags": []
 }
