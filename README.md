@@ -2,7 +2,8 @@
 A fully automated and intelligent Job Alert System built with n8n, OpenAI/Gemini, React.js, and external job scraping tools like Apify. This system allows users to receive personalized job alerts in their inbox every day based on their preferred job keywords and location. It features a lightweight frontend for user onboarding, AI-powered summarization of job listings, and a complete unsubscribe workflow for user management.
 
 ## 🔗 Live Demo
-- [In case the backend doesnt respond watch the video explanation of the project here](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
+**Note:** The backend is deployed on a self-hosted n8n instance via Render’s free tier plan, which may cause the service to sleep after inactivity and lead to temporary issues running the website. To see how this project actually works without interruptions, please refer to the demo video linked below:
+- [Video Explanation of the Project](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
 - **Job Alert Form (Frontend)**: https://job-whisperer-53.lovable.app/
 - n8n serving as a backend engine
 - Fill the live form with your email, job role (e.g., "data scientist"), and preferred city to start receiving AI-summarized job alerts every day.
