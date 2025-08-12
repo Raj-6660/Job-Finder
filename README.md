@@ -1,29 +1,97 @@
-## AI-Powered Job Alert Agent
-A fully automated and intelligent Job Alert System built with n8n, OpenAI/Gemini, React.js, and external job scraping tools like Apify. This system allows users to receive personalized job alerts in their inbox every day based on their preferred job keywords and location. It features a lightweight frontend for user onboarding, AI-powered summarization of job listings, and a complete unsubscribe workflow for user management.
+# Job Alert Agent
+An automated, AI-powered workflow that finds jobs for you, filters them based on your preferences, summarizes them, and sends them straight to your inbox — every day, without you having to lift a finger.
 
-## 🔗 Live Demo
-**Note:** The backend is deployed on a self-hosted n8n instance via Render’s free tier plan, which may cause the service to sleep after inactivity and lead to temporary issues running the website. To see how this project actually works without interruptions, please refer to the demo video linked below:
-- [Video Explanation of the Project](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
-- **Job Alert Form (Frontend)**: https://job-whisperer-53.lovable.app/
-- n8n serving as a backend engine
-- Fill the live form with your email, job role (e.g., "data scientist"), and preferred city to start receiving AI-summarized job alerts every day.
+## Live Links
+- 🔗**Try Yourself**: [Click Here](https://job-whisperer-53.lovable.app/)
+- 🔗**Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
 
-## 🧩 Key Features
-1. Frontend Job Alert Form
-A clean and responsive form built using React.js + Tailwind CSS for collecting user preferences (email, job keyword, location).
+## Overview
+Scrolling through endless job boards is a time sink. Most listings are irrelevant, and the few that matter get buried in the noise.
+This project was built to cut that noise.
 
-2. Automated Job Fetching
-Jobs are scraped dynamically using Apify Actors, Feed43, or Huginn, depending on the source.
+The Job Alert Agent automates the entire process:
+1. Collects your preferences (role, location, keywords).
+2. crapes fresh listings from online job boards every day.
+3. Uses AI to summarize each job so you only see what matters.
+4. Sends it all to you in a neatly formatted email.
 
-3. AI Summarization (LLM)
-Uses OpenAI GPT-4 or Gemini Pro to convert long job descriptions into short, readable summaries.
+Everything runs automatically, so you don’t have to check websites or filter listings manually. The unsubscribe button works instantly — no shady “wait 7 business days” nonsense.
 
-4. Daily Email Alerts
-A scheduled n8n Cron Trigger fetches jobs, summarizes them, and sends a daily digest email to each user.
+## Why I Built it
+While experimenting with AI agents and low-code automation at IIT Jammu, I wanted a real, useful project that solved a personal pain point: filtering jobs efficiently.
+Instead of writing a heavy backend from scratch, I used n8n to design visual workflows, Apify for scraping, and Gemini/OpenAI for job summarization.
+The result? A working production system in a fraction of the time it would have taken with traditional development.
 
-5. Google Sheets as Backend
-Acts as a lightweight and serverless database to manage users and store summaries.
+## Features
+- Daily job fetching from Naukri.com (expandable to other sources).
+- AI summarization for clean, quick-to-read job descriptions.
+- Preference-based filtering using keywords + location.
+- Email digests with clickable job links.
+- One-click unsubscribe that actually deletes your data.
+- Serverless deployment (frontend + backend in the cloud).
 
-6. Unsubscribe Workflow
-A seamless unsubscribe experience using a webhook and email link. Deletes all user-related entries from the sheet automatically.
+## How it Works
+### Frontend (Lovable + React + TypeScript)
+- Users submit their preferences through a form (email, job title, skills, location).
+- Data is sent via webhook to the n8n backend.
+- Every email contains an “unsubscribe” link that triggers instant removal from the database.
 
+### Backend (Self-Hosted N8N containing the backend workflow)
+1. Fetch preferences from Google Sheets (acts as a simple database).
+2. Scrape jobs via Apify, passing in user-specific keywords and location.
+3. Summarize descriptions with Gemini/OpenAI into a compact format:
+4. Apply filtering logic with Code node (JavaScript)
+
+  - This custom JavaScript step filters the AI-generated job summaries to include only those matching the user’s role, keywords, and location.
+  - Also adds a fallback to send related jobs if no exact matches are found, so the user never receives an empty email.
+
+5. Store summaries in a separate sheet for easy retrieval.
+6. Format email with HTML so it looks clean and scannable.
+7. Send email using Gmail integration in n8n.
+8. Handle unsubscriptions by deleting both preference and summary data.
+
+### Architecture
+**Backend n8n Workflow**
+**Subscribe Workflow**
+
+**Unsubscribe Workflow**
+
+## Tech Stack
+
+| Layer      | Tool / Platform            | Purpose                                            |
+| ---------- | -------------------------- | -------------------------------------------------- |
+| Frontend   | React, TypeScript, Lovable | Subscription form + unsubscribe                    |
+| Automation | n8n                        | Orchestrates scraping, summarization, and emailing |
+| Scraping   | Apify                      | Fetches job data from external sites               |
+| AI         | Gemini AI / OpenAI         | Summarizes long job descriptions                   |
+| Code Nodes | Javascript                 | Filters the Jobs according to user preferences     |
+| Database   | Google Sheets              | Stores preferences & job summaries                 |
+| Emailing   | Gmail API (n8n)            | Sends personalized digests                         |
+| Hosting    | Lovable + Render           | Frontend & backend deployment                      |
+
+## Challenges and Solutions
+
+| Challenge                             | Solution                                                        |
+| ------------------------------------- | --------------------------------------------------------------- |
+| RSS job feeds were unreliable         | Moved to Apify scraping for more stable, structured results     |
+| API cost & rate limits                | Limited daily results per user and optimized workflow execution |
+| No matches for niche preferences      | Added fallback to related jobs so emails are never empty        |
+| Sensitive URLs exposed in frontend    | Moved webhooks & API keys to environment variables              |
+| Unsubscribe wasn’t clearing summaries | Updated workflow to delete both preferences and stored results  |
+| Community nodes & credentials in self-hosted n8n could be lost after one-time use     | Used free PostgreSQL on Render for persistence                  |
+| Needed secure, consistent storage for workflows | Followed n8n docs to connect and store them safely              |
+
+
+## Future Improvements
+- Pull listings from multiple platforms (Indeed, LinkedIn, etc.).
+- Move storage from Google Sheets to Firebase or MongoDB for scale.
+- Let users pick their preferred summary style or tone.
+- Add a personal dashboard to manage history and preferences.
+- Introduce recruiter tools to post jobs and auto-match candidates.
+
+## Screenshots
+
+### Frontend UI
+
+## License
+This project is released under the Apache 2.0 License.
