@@ -2,10 +2,15 @@
 An automated, AI-powered workflow that finds jobs for you, filters them based on your preferences, summarizes them, and sends them straight to your inbox — every day, without you having to lift a finger.
 
 ## Live Links
-- <img src="https://unpkg.com/feather-icons/dist/icons/link.svg" width="20" style="filter: invert(35%) sepia(94%) saturate(3465%) hue-rotate(197deg) brightness(92%) contrast(94%);" />
- **Try Yourself**: [Click Here](https://job-whisperer-53.lovable.app/)
-- <img src="https://unpkg.com/feather-icons/dist/icons/link.svg" width="20" style="filter: invert(35%) sepia(94%) saturate(3465%) hue-rotate(197deg) brightness(92%) contrast(94%);" />
- **Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
+- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" stroke="#1E90FF" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13"></path>
+  <path d="M14 11a5 5 0 0 1 0 7l-1.5 1.5a5 5 0 0 1-7-7L7 11"></path>
+</svg> **Try Yourself**: [Click Here](https://job-whisperer-53.lovable.app/)
+
+- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" stroke="#1E90FF" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13"></path>
+  <path d="M14 11a5 5 0 0 1 0 7l-1.5 1.5a5 5 0 0 1-7-7L7 11"></path>
+ </svg> **Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
 
 ## Overview
 Scrolling through endless job boards is a time sink. Most listings are irrelevant, and the few that matter get buried in the noise.
