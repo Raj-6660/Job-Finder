@@ -23,14 +23,14 @@ Instead of writing a heavy backend from scratch, I used n8n to design visual wor
 The result? A working production system in a fraction of the time it would have taken with traditional development.
 
 ## Features
-- <img src="https://cdn.simpleicons.org/apify/FF9900" width="20" /> Automated job data scraping from Naukri.com using Apify.
+- <img src="https://upload.wikimedia.org/wikipedia/commons/…/Apify-logo.svg" width="20" /> Automated job data scraping from Naukri.com using Apify.
 - <img src="https://cdn.simpleicons.org/google/4285F4" width="20" /> AI-powered job summarization using Gemini API.
 - <img src="https://cdn.simpleicons.org/googlesheets/34A853" width="20" /> Preference storage and job summary saving in Google Sheets.
 - <img src="https://cdn.simpleicons.org/gmail/EA4335" width="20" /> Automated daily email alerts using Gmail API.
 - <img src="https://cdn.simpleicons.org/javascript/F7DF1E" width="20" /> Custom filtering logic with JavaScript in n8n Code Node.
 - <img src="https://cdn.simpleicons.org/n8n/EA4E62" width="20" /> Automated workflows managed through n8n.
 - <img src="https://cdn.simpleicons.org/render/46E3B7" width="20" /> Backend hosting on Render (self-hosted n8n).
-- <img src="https://cdn.simpleicons.org/lovable/FF4B4B" width="20" /> Frontend hosting on Lovable for public access.
+- <img src="https://lovable.dev/assets/lovable-icon.svg" width="20" alt="Lovable" /> Frontend hosting on Lovable for public access.
 
 ## How it Works
 ### Frontend (Lovable + React + TypeScript)
