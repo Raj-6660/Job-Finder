@@ -52,8 +52,11 @@ The result? A working production system in a fraction of the time it would have 
 
 ### Architecture
 **Subscribe Workflow**
+
 ![](assets/screenshots/Screenshot%202025-08-04%20162200.png)
+
 **Unsubscribe Workflow**
+
 ![](assets/screenshots/Screenshot%202025-08-04%20161724.png)
 
 ## Tech Stack
@@ -93,11 +96,14 @@ The result? A working production system in a fraction of the time it would have 
 
 ### Frontend UI
 ![](assets/screenshots/Screenshot%202025-08-12%20150719.png)
+
 ![](assets/screenshots/Screenshot%202025-08-12%20150737.png)
+
 ![](assets/screenshots/Screenshot%202025-08-12%20150806.png)
 
 ### Backend 
 ![](assets/screenshots/Screenshot%202025-08-04%20162200.png)
+
 ![](assets/screenshots/Screenshot%202025-08-04%20161724.png)
 
 ## License
