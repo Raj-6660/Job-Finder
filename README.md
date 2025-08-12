@@ -2,8 +2,10 @@
 An automated, AI-powered workflow that finds jobs for you, filters them based on your preferences, summarizes them, and sends them straight to your inbox — every day, without you having to lift a finger.
 
 ## Live Links
-- <img src="https://unpkg.com/feather-icons/dist/icons/link.svg" width="20" /> **Try Yourself**: [Click Here](https://job-whisperer-53.lovable.app/)
-- <img src="https://unpkg.com/feather-icons/dist/icons/link.svg" width="20" /> **Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
+- <img src="https://unpkg.com/feather-icons/dist/icons/link.svg" width="20" style="filter: invert(35%) sepia(94%) saturate(3465%) hue-rotate(197deg) brightness(92%) contrast(94%);" />
+ **Try Yourself**: [Click Here](https://job-whisperer-53.lovable.app/)
+- <img src="https://unpkg.com/feather-icons/dist/icons/link.svg" width="20" style="filter: invert(35%) sepia(94%) saturate(3465%) hue-rotate(197deg) brightness(92%) contrast(94%);" />
+ **Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
 
 ## Overview
 Scrolling through endless job boards is a time sink. Most listings are irrelevant, and the few that matter get buried in the noise.
