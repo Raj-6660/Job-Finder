@@ -52,9 +52,9 @@ The result? A working production system in a fraction of the time it would have 
 
 ### Architecture
 **Subscribe Workflow**
-![](assets/screenshots/Screenshot%202025-08-12%20162200.png)
+![](assets/screenshots/Screenshot%202025-08-04%20162200.png)
 **Unsubscribe Workflow**
-![](assets/screenshots/Screenshot%202025-08-12%20161724.png)
+![](assets/screenshots/Screenshot%202025-08-04%20161724.png)
 
 ## Tech Stack
 
@@ -97,8 +97,8 @@ The result? A working production system in a fraction of the time it would have 
 ![](assets/screenshots/Screenshot%202025-08-12%20150806.png)
 
 ### Backend 
-![](assets/screenshots/Screenshot%202025-08-12%20162200.png)
-![](assets/screenshots/Screenshot%202025-08-12%20161724.png)
+![](assets/screenshots/Screenshot%202025-08-04%20162200.png)
+![](assets/screenshots/Screenshot%202025-08-04%20161724.png)
 
 ## License
 This project is released under the **Apache 2.0 License**.
