@@ -11,7 +11,7 @@ This project was built to cut that noise.
 
 The Job Alert Agent automates the entire process:
 1. Collects your preferences (role, location, keywords).
-2. crapes fresh listings from online job boards every day.
+2. Scrapes fresh listings from online job boards every day.
 3. Uses AI to summarize each job so you only see what matters.
 4. Sends it all to you in a neatly formatted email.
 
@@ -23,12 +23,14 @@ Instead of writing a heavy backend from scratch, I used n8n to design visual wor
 The result? A working production system in a fraction of the time it would have taken with traditional development.
 
 ## Features
-- Daily job fetching from Naukri.com (expandable to other sources).
-- AI summarization for clean, quick-to-read job descriptions.
-- Preference-based filtering using keywords + location.
-- Email digests with clickable job links.
-- One-click unsubscribe that actually deletes your data.
-- Serverless deployment (frontend + backend in the cloud).
+- <img src="https://cdn.simpleicons.org/apify/FF9900" width="20" /> Automated job data scraping from Naukri.com using Apify.
+- <img src="https://cdn.simpleicons.org/google/4285F4" width="20" /> AI-powered job summarization using Gemini API.
+- <img src="https://cdn.simpleicons.org/googlesheets/34A853" width="20" /> Preference storage and job summary saving in Google Sheets.
+- <img src="https://cdn.simpleicons.org/gmail/EA4335" width="20" /> Automated daily email alerts using Gmail API.
+- <img src="https://cdn.simpleicons.org/javascript/F7DF1E" width="20" /> Custom filtering logic with JavaScript in n8n Code Node.
+- <img src="https://cdn.simpleicons.org/n8n/EA4E62" width="20" /> Automated workflows managed through n8n.
+- <img src="https://cdn.simpleicons.org/render/46E3B7" width="20" /> Backend hosting on Render (self-hosted n8n).
+- <img src="https://cdn.simpleicons.org/lovable/FF4B4B" width="20" /> Frontend hosting on Lovable for public access.
 
 ## How it Works
 ### Frontend (Lovable + React + TypeScript)
