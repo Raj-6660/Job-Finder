@@ -2,8 +2,8 @@
 An automated, AI-powered workflow that finds jobs for you, filters them based on your preferences, summarizes them, and sends them straight to your inbox — every day, without you having to lift a finger.
 
 ## Live Links
-- 🔗**Try Yourself**: [Click Here](https://job-whisperer-53.lovable.app/)
-- 🔗**Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
+- <img src="https://cdn.simpleicons.org/link/000000" width="20" /> **Try Yourself**: [Click Here](https://job-whisperer-53.lovable.app/)
+- <img src="https://cdn.simpleicons.org/link/000000" width="20" /> **Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
 
 ## Overview
 Scrolling through endless job boards is a time sink. Most listings are irrelevant, and the few that matter get buried in the noise.
@@ -19,7 +19,7 @@ Everything runs automatically, so you don’t have to check websites or filter l
 
 ## Why I Built it
 While experimenting with AI agents and low-code automation at IIT Jammu, I wanted a real, useful project that solved a personal pain point: filtering jobs efficiently.
-Instead of writing a heavy backend from scratch, I used n8n to design visual workflows, Apify for scraping, and Gemini/OpenAI for job summarization.
+Instead of writing a heavy backend from scratch, I used n8n to design visual workflows, Apify for scraping, and Gemini API for job summarization.
 The result? A working production system in a fraction of the time it would have taken with traditional development.
 
 ## Features
@@ -39,7 +39,7 @@ The result? A working production system in a fraction of the time it would have 
 ### Backend (Self-Hosted N8N containing the backend workflow)
 1. Fetch preferences from Google Sheets (acts as a simple database).
 2. Scrape jobs via Apify, passing in user-specific keywords and location.
-3. Summarize descriptions with Gemini/OpenAI into a compact format:
+3. Summarize descriptions with Gemini API into a compact format:
 4. Apply filtering logic with Code node (JavaScript)
 
   - This custom JavaScript step filters the AI-generated job summaries to include only those matching the user’s role, keywords, and location.
@@ -63,14 +63,14 @@ The result? A working production system in a fraction of the time it would have 
 
 | Layer      | Tool / Platform            | Purpose                                            |
 | ---------- | -------------------------- | -------------------------------------------------- |
-| Frontend   | React, TypeScript, Lovable | Subscription form + unsubscribe                    |
-| Automation | n8n                        | Orchestrates scraping, summarization, and emailing |
-| Scraping   | Apify                      | Fetches job data from external sites               |
-| AI         | Gemini AI / OpenAI         | Summarizes long job descriptions                   |
-| Code Nodes | Javascript                 | Filters the Jobs according to user preferences     |
-| Database   | Google Sheets              | Stores preferences & job summaries                 |
-| Emailing   | Gmail API (n8n)            | Sends personalized digests                         |
-| Hosting    | Lovable + Render           | Frontend & backend deployment                      |
+| Frontend   | <img src="https://cdn.simpleicons.org/react/61DAFB" width="20" /> React, <img src="https://cdn.simpleicons.org/typescript/3178C6" width="20" /> TypeScript, Lovable | Subscription form + unsubscribe                    |
+| Automation | <img src="https://cdn.simpleicons.org/n8n/EA4E62" width="20" /> n8n                        | Orchestrates scraping, summarization, and emailing |
+| Scraping   | 🕷️ Apify                      | Fetches job data from external sites               |
+| AI         | <img src="https://cdn.simpleicons.org/gmail/EA4335" width="20" /> Gemini API                 | Summarizes long job descriptions                   |
+| Code Nodes | <img src="https://cdn.simpleicons.org/javascript/F7DF1E" width="20" /> Javascript                 | Filters the Jobs according to user preferences     |
+| Database   | <img src="https://cdn.simpleicons.org/googlesheets/34A853" width="20" /> Google Sheets              | Stores preferences & job summaries                 |
+| Emailing   | <img src="https://cdn.simpleicons.org/gmail/EA4335" width="20" /> Gmail API (n8n)            | Sends personalized digests                         |
+| Hosting    | 🌐 Lovable + <img src="https://cdn.simpleicons.org/render/46E3B7" width="20" /> Render           | Frontend & backend deployment                      |
 
 ## Challenges and Solutions
 
@@ -105,6 +105,13 @@ The result? A working production system in a fraction of the time it would have 
 ![](assets/screenshots/Screenshot%202025-08-04%20162200.png)
 
 ![](assets/screenshots/Screenshot%202025-08-04%20161724.png)
+
+### Final Results
+![]()
+
+![]()
+
+![]()
 
 ## License
 This project is released under the **Apache 2.0 License**.
