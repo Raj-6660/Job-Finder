@@ -2,8 +2,8 @@
 An automated, AI-powered workflow that finds jobs for you, filters them based on your preferences, summarizes them, and sends them straight to your inbox — every day, without you having to lift a finger.
 
 ## Live Links
-- <img src="https://cdn.simpleicons.org/link/000000" width="20" /> **Try Yourself**: [Click Here](https://job-whisperer-53.lovable.app/)
-- <img src="https://cdn.simpleicons.org/link/000000" width="20" /> **Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
+- <img src="https://unpkg.com/feather-icons/dist/icons/link.svg" width="20" /> **Try Yourself**: [Click Here](https://job-whisperer-53.lovable.app/)
+- <img src="https://unpkg.com/feather-icons/dist/icons/link.svg" width="20" /> **Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
 
 ## Overview
 Scrolling through endless job boards is a time sink. Most listings are irrelevant, and the few that matter get buried in the noise.
@@ -107,11 +107,11 @@ The result? A working production system in a fraction of the time it would have 
 ![](assets/screenshots/Screenshot%202025-08-04%20161724.png)
 
 ### Final Results
-![]()
+![](assets/screenshots/Screenshot%202025-08-03%20021438.png)
 
-![]()
+![](assets/screenshots/Screenshot%202025-08-03%20021510.png)
 
-![]()
+![](assets/screenshots/Screenshot%202025-08-03%20021621.png)
 
 ## License
 This project is released under the **Apache 2.0 License**.
