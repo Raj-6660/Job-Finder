@@ -51,10 +51,10 @@ The result? A working production system in a fraction of the time it would have 
 8. Handle unsubscriptions by deleting both preference and summary data.
 
 ### Architecture
-**Backend n8n Workflow**
 **Subscribe Workflow**
-
+![](assets/screenshots/Screenshot%202025-08-12%20162200.png)
 **Unsubscribe Workflow**
+![](assets/screenshots/Screenshot%202025-08-12%20161724.png)
 
 ## Tech Stack
 
@@ -92,6 +92,13 @@ The result? A working production system in a fraction of the time it would have 
 ## Screenshots
 
 ### Frontend UI
+![](assets/screenshots/Screenshot%202025-08-12%20150719.png)
+![](assets/screenshots/Screenshot%202025-08-12%20150737.png)
+![](assets/screenshots/Screenshot%202025-08-12%20150806.png)
+
+### Backend 
+![](assets/screenshots/Screenshot%202025-08-12%20162200.png)
+![](assets/screenshots/Screenshot%202025-08-12%20161724.png)
 
 ## License
-This project is released under the Apache 2.0 License.
+This project is released under the **Apache 2.0 License**.
