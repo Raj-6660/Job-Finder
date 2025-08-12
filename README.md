@@ -50,6 +50,9 @@ The result? A working production system in a fraction of the time it would have 
 7. Send email using Gmail integration in n8n.
 8. Handle unsubscriptions by deleting both preference and summary data.
 
+> 💡 **Note:** The current workflow uses a **Webhook** node for quick testing and experimentation.  
+> This setup won’t run automatically every day. For scheduled daily runs, replace the Webhook trigger with a **Schedule Trigger** or **Cron** node.
+
 ### Architecture
 **Subscribe Workflow**
 
