@@ -1,16 +1,14 @@
 # Job Alert Agent
 An automated, AI-powered workflow that finds jobs for you, filters them based on your preferences, summarizes them, and sends them straight to your inbox — every day, without you having to lift a finger.
 
-## Live Links
+## Relevant Links
 > <div style="padding:14px 16px;border:2px solid #f59e0b;background:#FFFBEB;border-radius:12px;">
->   <strong>⚠️ Backend may be waking up</strong><br/>
->   This project’s backend runs on a self-hosted n8n via Render (Free Tier). If idle, Render can put it to sleep.
->   When you click <em>🔔 Subscribe</em>, it may take ⏳ ~5 minutes to reactivate.
->   <br/><br/>
->   👉 Please <strong>be patient</strong> and <strong>try 2–3 times</strong> if you see an error. The service will respond once Render finishes waking up.
+>   The **live demo** is currently unavailable as the free Postgres instance on **Render** has expired.
+>   An alternative deployment is in progress.
+>   🎥 In the meantime, you can watch the **video explanation of the project and frontend**.
 > </div>
 
-- <img src="https://cdn.simpleicons.org/slint/2379F4" width="20" /> **Try Yourself**: [Click Here](https://job-whisperer-53.lovable.app/)
+- <img src="https://cdn.simpleicons.org/slint/2379F4" width="20" /> **Frontend Interface**: [Click Here](https://job-whisperer-53.lovable.app/)
 - <img src="https://cdn.simpleicons.org/slint/2379F4" width="20" /> **Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
 
 ## Overview
