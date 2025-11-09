@@ -3,9 +3,10 @@ An automated, AI-powered workflow that finds jobs for you, filters them based on
 
 ## Relevant Links
 > <div style="padding:14px 16px;border:2px solid #f59e0b;background:#FFFBEB;border-radius:12px;">
->   The *live demo* is currently unavailable as the free Postgres instance on *Render* has expired.
->   An alternative deployment is in progress.
->   🎥 In the meantime, you can watch the *video explanation of the project and frontend*.
+>   The n8n backend is self-hosted on Render, which means it may take 30–60 seconds to wake up if it’s been idle for a while (Render free tier automatically puts apps to sleep).
+
+> If you see a delay or “backend not responding” message when accessing the app, please wait a few moments — the server is just waking up from sleep mode. Once active, everything will run normally.
+>   🎥 It can take upto 4 to 5 minutes for email to be received for job alerts, you can wait or you can watch the *video explanation of the project*.
 > </div>
 
 - <img src="https://cdn.simpleicons.org/slint/2379F4" width="20" /> **Frontend Interface**: [Click Here](https://job-whisperer-53.lovable.app/)
