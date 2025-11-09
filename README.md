@@ -9,7 +9,7 @@ An automated, AI-powered workflow that finds jobs for you, filters them based on
 >   🎥 It can take upto 4 to 5 minutes for email to be received for job alerts, you can wait or you can watch the *video explanation of the project*.
 > </div>
 
-- <img src="https://cdn.simpleicons.org/slint/2379F4" width="20" /> **Frontend Interface**: [Click Here](https://job-whisperer-53.lovable.app/)
+- <img src="https://cdn.simpleicons.org/slint/2379F4" width="20" /> **Application Link**: [Click Here](https://job-whisperer-53.lovable.app/)
 - <img src="https://cdn.simpleicons.org/slint/2379F4" width="20" /> **Video Explanation of the Project**: [Video](https://drive.google.com/file/d/1EPsWIJmGL6mSixbKjwrllNBmR6zFS-YI/view?usp=sharing)
 
 ## Overview
